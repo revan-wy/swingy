@@ -1,6 +1,6 @@
 package swingy.models;
 
-enum FighterClass {
+public enum FighterClass {
     ROGUE,
     THIEF,
     SOLDIER,

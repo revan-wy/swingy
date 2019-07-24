@@ -1,6 +1,6 @@
 package swingy.models;
 
-class Fighter {
+public class Fighter {
     public FighterClass fighterClass;
     public int level;
     public int attack;

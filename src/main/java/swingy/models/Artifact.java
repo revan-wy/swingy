@@ -1,6 +1,6 @@
 package swingy.models;
 
-class Artifact {
+public class Artifact {
     public ArtifactClass artifactClass;
     public int buff;
 }

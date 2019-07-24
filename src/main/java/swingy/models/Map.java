@@ -1,5 +1,5 @@
 package swingy.models;
 
-class Map {
+public class Map {
     public int size;
 }

@@ -1,6 +1,6 @@
 package swingy.models;
 
-enum ArtifactClass {
+public enum ArtifactClass {
     WEAPON,
     ARMOUR,
     HELM
