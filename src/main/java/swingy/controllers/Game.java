@@ -8,6 +8,7 @@ public class Game {
         String input;
         Show.initialScreen();
         input = GetInput.read();
+        System.out.println(input);
         // add here what to do with input and how to proceed
     }
 }
