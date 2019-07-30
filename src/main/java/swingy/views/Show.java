@@ -2,10 +2,13 @@ package swingy.views;
 
 public class Show {
     public static void initialScreen() {
-        System.out.println("WELCOME!!!");
-        System.out.println("");
-        System.out.println("Enter CREATE to create a new character.");
-        System.out.println("Enter LOAD to load an existing character.");
-        System.out.print("Now, choose: ");
+        System.out.print(
+            "\n" +
+            "\n" +
+            "WELCOME!!!\n" +
+            "\n" +
+            "Enter CREATE to create a new character.\n" +
+            "Enter LOAD to load an existing character.\n" +
+            "Now, choose: ");
     }
 }

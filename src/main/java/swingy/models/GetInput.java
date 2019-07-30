@@ -19,7 +19,7 @@ public class GetInput {
         }
         try {
             input = br.readLine();
-            return input;
+            return input.toLowerCase();
         } catch (IOException e) {
             System.out.println("Reading input failed");
             System.exit(1);
