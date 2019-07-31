@@ -6,5 +6,5 @@ swingy/controllers/Game.class
 swingy/models/GetInput.class
 swingy/views/Show.class
 swingy/models/Map.class
-swingy/models/Villian.class
 swingy/models/FighterClass.class
+swingy/models/Villian.class
