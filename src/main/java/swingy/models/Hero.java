@@ -7,6 +7,8 @@ public class Hero extends Fighter {
     public Hero() {}
     
     public Hero(String name, String heroClass) {
-        
+        super(heroClass);
+        this.name = name;
+        this.exp = 0;
     }
 }

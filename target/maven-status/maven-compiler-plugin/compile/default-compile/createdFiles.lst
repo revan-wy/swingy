@@ -4,6 +4,7 @@ swingy/models/Fighter.class
 swingy/models/Hero.class
 swingy/models/ArtifactClass.class
 swingy/controllers/Game.class
+swingy/models/Fighter$1.class
 swingy/views/Show.class
 swingy/models/Map.class
 swingy/models/Villian.class

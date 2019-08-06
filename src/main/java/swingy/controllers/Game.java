@@ -7,9 +7,16 @@ import swingy.views.*;
 public class Game {
     public static void main (String[] args) {
         Hero hero = setup();
-        // add here what to do with input and how to proceed
-
-
+        // System.out.print(
+        //     "att\t" + hero.attack + "\n" +
+        //     "def\t" + hero.defence + "\n" +
+        //     "exp\t" + hero.exp + "\n" +
+        //     "hp\t" + hero.hitPoints + "\n" +
+        //     "lvl\t" + hero.level + "\n" +
+        //     "nm\t" + hero.name + "\n" +
+        //     "fc\t" + hero.fighterClass + "\n"
+        // );
+        
     }
 
     public static Hero setup () {
@@ -46,6 +53,7 @@ public class Game {
         name = GetInput.read();
 
         while (!(FighterClass.contains(heroClass))) {
+            Show.classLevelZeroDetails();
             Show.askHeroClass();
             heroClass = GetInput.read();
         }

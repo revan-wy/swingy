@@ -14,13 +14,25 @@ public class Show {
 
     public static void askHeroName() {
         System.out.print(
+            "\n" +
             "What is your character's name: "
         );
     }
 
     public static void askHeroClass() {
         System.out.print(
+            "\n" +
             "To which class will your new character belong: "
+        );
+    }
+
+    public static void classLevelZeroDetails() {
+        System.out.print(
+            "\n" +
+            "           Rogue   Thief   Soldier" +  "\n" +
+            "Hit Points   80      80      160" + "\n" +
+            "Defence      80     160       80" + "\n" +
+            "Attack      160      80       80" +  "\n"
         );
     }
 }
