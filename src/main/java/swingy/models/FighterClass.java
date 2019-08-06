@@ -6,5 +6,16 @@ public enum FighterClass {
     SOLDIER,
     SKELETON,
     OOZE,
-    BLIGHT
+    BLIGHT;
+
+    public static boolean contains(String test) {
+
+        for (FighterClass c : FighterClass.values()) {
+            if (c.name().equals(test)) {
+                return true;
+            }
+        }
+    
+        return false;
+    }
 }

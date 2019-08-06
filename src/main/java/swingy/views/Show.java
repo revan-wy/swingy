@@ -11,4 +11,16 @@ public class Show {
             "Enter LOAD to load an existing character.\n" +
             "Now, choose: ");
     }
+
+    public static void askHeroName() {
+        System.out.print(
+            "What is your character's name: "
+        );
+    }
+
+    public static void askHeroClass() {
+        System.out.print(
+            "To which class will your new character belong: "
+        );
+    }
 }

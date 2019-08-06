@@ -1,4 +1,4 @@
-package swingy.models;
+package swingy.controllers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class GetInput {
         }
         try {
             input = br.readLine();
-            return input.toLowerCase();
+            return input.toUpperCase();
         } catch (IOException e) {
             System.out.println("Reading input failed");
             System.exit(1);
