@@ -1,10 +1,10 @@
-/sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/ArtifactClass.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/Hero.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/Fighter.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/Artifact.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/views/Show.java
+/sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/ArtifactTypes.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/controllers/GetInput.java
+/sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/FighterTypes.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/Villian.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/controllers/Game.java
 /sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/Map.java
-/sgoinfre/revan-wy/documents/swingy/code/src/main/java/swingy/models/FighterClass.java

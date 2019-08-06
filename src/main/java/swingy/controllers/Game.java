@@ -1,6 +1,6 @@
 package swingy.controllers;
 
-import swingy.models.FighterClass;
+import swingy.models.FighterTypes;
 import swingy.models.Hero;
 import swingy.views.*;
 
@@ -16,7 +16,7 @@ public class Game {
         //     "nm\t" + hero.name + "\n" +
         //     "fc\t" + hero.fighterClass + "\n"
         // );
-        
+
     }
 
     public static Hero setup () {
@@ -52,7 +52,7 @@ public class Game {
         Show.askHeroName();
         name = GetInput.read();
 
-        while (!(FighterClass.contains(heroClass))) {
+        while (!(FighterTypes.contains(heroClass))) {
             Show.classLevelZeroDetails();
             Show.askHeroClass();
             heroClass = GetInput.read();

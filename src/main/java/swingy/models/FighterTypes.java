@@ -1,6 +1,6 @@
 package swingy.models;
 
-public enum FighterClass {
+public enum FighterTypes {
     ROGUE,
     THIEF,
     SOLDIER,
@@ -10,7 +10,7 @@ public enum FighterClass {
 
     public static boolean contains(String test) {
 
-        for (FighterClass c : FighterClass.values()) {
+        for (FighterTypes c : FighterTypes.values()) {
             if (c.name().equals(test)) {
                 return true;
             }

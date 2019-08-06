@@ -1,7 +1,7 @@
 package swingy.models;
 
 public class Fighter {
-    public FighterClass fighterClass;
+    public FighterTypes fighterClass;
     public int level;
     public int attack;
     public int defence;
@@ -46,13 +46,13 @@ public class Fighter {
         }
     }
 
-    private FighterClass setFighterClass(String fighterClass) {
-        for (FighterClass c : FighterClass.values()) {
+    private FighterTypes setFighterClass(String fighterClass) {
+        for (FighterTypes c : FighterTypes.values()) {
             if (c.name().equals(fighterClass)) {
                 return c;
             }
         }
-        return FighterClass.ROGUE;
+        return FighterTypes.ROGUE;
     }
 
     // private int setAttack() {
