@@ -20,7 +20,10 @@ public class Game {
             "rhp\t" + hero.remainingHitPoints + "\n" +
             "lvl\t" + hero.level + "\n" +
             "nm\t" + hero.name + "\n" +
-            "fc\t" + hero.fighterType + "\n"
+            "fc\t" + hero.fighterType + "\n" +
+            "hlm\t" + hero.helm + "\n" +
+            "rmr\t" + hero.armour + "\n" +
+            "wpn\t" + hero.weapon + "\n"
         );
 
     }

@@ -3,6 +3,9 @@ package swingy.models;
 public class Hero extends Fighter {
     public String name;
     public int exp;
+    public ArtifactTypes helm;
+    public ArtifactTypes armour;
+    public ArtifactTypes weapon;
 
     public Hero() {}
     
@@ -11,11 +14,6 @@ public class Hero extends Fighter {
         this.name = name;
         this.exp = 0;
     }
-
-    // name
-    // fighterclass
-    // level
-    // exp
 
     public Hero(String name, String heroType, int level, int exp) {
         super(heroType, level);
