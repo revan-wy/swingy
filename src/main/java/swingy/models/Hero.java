@@ -3,9 +3,9 @@ package swingy.models;
 public class Hero extends Fighter {
     public String name;
     public int exp;
-    public ArtifactTypes helm;
-    public ArtifactTypes armour;
-    public ArtifactTypes weapon;
+    public Artifact helm;
+    public Artifact armour;
+    public Artifact weapon;
 
     public Hero() {}
     

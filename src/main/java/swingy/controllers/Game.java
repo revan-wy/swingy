@@ -12,6 +12,7 @@ import swingy.views.*;
 public class Game {
     public static void main (String[] args) {
         Hero hero = setup();
+        Show.displayStats(hero);
         System.out.print(
             "att\t" + hero.attack + "\n" +
             "def\t" + hero.defence + "\n" +
