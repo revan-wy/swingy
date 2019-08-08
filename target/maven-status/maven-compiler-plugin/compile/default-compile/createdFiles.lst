@@ -1,9 +1,10 @@
-swingy/controllers/GetInput.class
-swingy/models/FighterTypes.class
 swingy/models/Artifact.class
+swingy/models/FighterTypes.class
+swingy/controllers/GetInput.class
 swingy/models/Fighter.class
-swingy/models/Hero.class
 swingy/models/ArtifactTypes.class
+swingy/models/Hero.class
+swingy/models/Coordinates.class
 swingy/controllers/Game.class
 swingy/models/Fighter$1.class
 swingy/views/Show.class

@@ -1,5 +1,8 @@
 package swingy.controllers;
 
+import static swingy.models.Coordinates.x;
+import static swingy.models.Coordinates.y;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,8 +19,9 @@ public class Game {
         Show.displayStats(hero);
         System.out.print("Press Return to start game");
         GetInput.read();
-        Map.setSize(hero);
+        Map.createMap(hero);
         System.out.print("Map size: " + Map.size + "\n");
+        System.out.print("Hero position: " + x + "," + y + "\n");
 
         // System.out.print(
         //     "att\t" + hero.attack + "\n" +
