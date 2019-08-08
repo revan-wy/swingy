@@ -22,6 +22,9 @@ public class Game {
         Map.createMap(hero);
         System.out.print("Map size: " + Map.size + "\n");
         System.out.print("Hero position: " + x + "," + y + "\n");
+        while (true) {
+            Map.moveHero();
+        }
 
         // System.out.print(
         //     "att\t" + hero.attack + "\n" +
@@ -106,5 +109,10 @@ public class Game {
             return createNewHero();
         } 
 
+    }
+
+    public static void victory() {
+        System.out.print("You've won\n");
+        System.exit(1);
     }
 }
