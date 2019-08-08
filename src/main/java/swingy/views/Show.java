@@ -1,5 +1,6 @@
 package swingy.views;
 
+import swingy.controllers.GetInput;
 import swingy.models.Hero;
 
 public class Show {
@@ -44,9 +45,9 @@ public class Show {
             "Hero Class:\t" + hero.fighterType + "\n" +
             "Max Hit Points:\t" + hero.maxHitPoints + "\n" +
             "Defence:\t" + hero.defence + "\n" +
-            "Attack:\t" + hero.attack + "\n" +
-            "Level:\t" + hero.level + "\n" +
-            "Exp:\t" + hero.exp + "\n"
+            "Attack:\t\t" + hero.attack + "\n" +
+            "Level:\t\t" + hero.level + "\n" +
+            "Exp:\t\t" + hero.exp + "\n"
         );
         if (hero.helm != null) {
             System.out.print(

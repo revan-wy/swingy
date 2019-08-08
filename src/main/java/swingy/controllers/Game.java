@@ -13,19 +13,22 @@ public class Game {
     public static void main (String[] args) {
         Hero hero = setup();
         Show.displayStats(hero);
-        System.out.print(
-            "att\t" + hero.attack + "\n" +
-            "def\t" + hero.defence + "\n" +
-            "exp\t" + hero.exp + "\n" +
-            "mhp\t" + hero.maxHitPoints + "\n" +
-            "rhp\t" + hero.remainingHitPoints + "\n" +
-            "lvl\t" + hero.level + "\n" +
-            "nm\t" + hero.name + "\n" +
-            "fc\t" + hero.fighterType + "\n" +
-            "hlm\t" + hero.helm + "\n" +
-            "rmr\t" + hero.armour + "\n" +
-            "wpn\t" + hero.weapon + "\n"
-        );
+        System.out.print("Press Return to start game");
+        GetInput.read();
+
+        // System.out.print(
+        //     "att\t" + hero.attack + "\n" +
+        //     "def\t" + hero.defence + "\n" +
+        //     "exp\t" + hero.exp + "\n" +
+        //     "mhp\t" + hero.maxHitPoints + "\n" +
+        //     "rhp\t" + hero.remainingHitPoints + "\n" +
+        //     "lvl\t" + hero.level + "\n" +
+        //     "nm\t" + hero.name + "\n" +
+        //     "fc\t" + hero.fighterType + "\n" +
+        //     "hlm\t" + hero.helm + "\n" +
+        //     "rmr\t" + hero.armour + "\n" +
+        //     "wpn\t" + hero.weapon + "\n"
+        // );
 
     }
 
