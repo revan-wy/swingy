@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import swingy.models.FighterTypes;
 import swingy.models.Hero;
+import swingy.models.Map;
 import swingy.views.*;
 
 public class Game {
@@ -15,6 +16,8 @@ public class Game {
         Show.displayStats(hero);
         System.out.print("Press Return to start game");
         GetInput.read();
+        Map.setSize(hero);
+        System.out.print("Map size: " + Map.size + "\n");
 
         // System.out.print(
         //     "att\t" + hero.attack + "\n" +
