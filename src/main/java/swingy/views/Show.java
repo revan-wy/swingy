@@ -1,6 +1,5 @@
 package swingy.views;
 
-import swingy.controllers.GetInput;
 import swingy.models.Hero;
 
 public class Show {
