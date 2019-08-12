@@ -3,6 +3,8 @@ package swingy.models;
 import static swingy.models.Coordinates.x;
 import static swingy.models.Coordinates.y;
 
+import java.util.Random;
+
 import swingy.controllers.Game;
 import swingy.controllers.GetInput;
 
@@ -35,5 +37,10 @@ public class Map {
         if (x <= 0 || x > size || y <= 0 || y > size) {
             Game.victory();
         }
+    }
+
+    public static boolean encounterVillian() {
+        Random random = new Random();
+        return random.nextBoolean();
     }
 }

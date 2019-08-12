@@ -8,9 +8,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import swingy.models.Artifact;
 import swingy.models.FighterTypes;
 import swingy.models.Hero;
 import swingy.models.Map;
+import swingy.models.Villian;
 import swingy.views.*;
 
 public class Game {
@@ -24,6 +26,13 @@ public class Game {
         System.out.print("Hero position: " + x + "," + y + "\n");
         while (true) {
             Map.moveHero();
+            if (Map.encounterVillian()) {
+                fight(hero);
+                Artifact artifact = new Artifact(hero);
+                if (hero.takeArtifact()) {
+                    hero.equipArtifact(artifact);
+                }
+            }
         }
 
         // System.out.print(
@@ -113,6 +122,21 @@ public class Game {
 
     public static void victory() {
         System.out.print("You've won\n");
+        System.exit(1);
+    }
+
+    static void fight(Hero hero) {
+        // Villian.getRandomVillian(hero);
+        Villian villian = Villian.getRandomVillian(hero);
+        if (villian.statSum() > hero.statSum()) {
+            Game.failure();
+        } else {
+
+        }
+    }
+
+    static void failure() {
+        System.out.print("You've lost\n");
         System.exit(1);
     }
 }

@@ -14,40 +14,52 @@ public class Fighter {
         this.fighterType = setFighterClass(fighterClass);
         this.level = level;
         switch(this.fighterType) {
-            // case BLIGHT:
-            //     this.attack = 160;
-            //     this.defence = 160;
-            //     this.maxHitPoints = 160;
-            //     break;
             case SOLDIER:
                 this.attack = 80;
                 this.defence = 80;
                 this.maxHitPoints = 160;
                 break;
-            // case OOZE:
-            //     this.attack = 160;
-            //     this.defence = 160;
-            //     this.maxHitPoints = 160;
-            //     break;
             case ROGUE:
                 this.attack = 160;
                 this.defence = 80;
                 this.maxHitPoints = 80;
                 break;
-            // case SKELETON:
-            //     this.attack = 160;
-            //     this.defence = 160;
-            //     this.maxHitPoints = 160;
-            //     break;
             case THIEF:
                 this.attack = 80;
                 this.defence = 160;
                 this.maxHitPoints = 80;
                 break;
             default:
-            this.attack = 80;
-            this.defence = 160;
-            this.maxHitPoints = 80;
+                this.attack = 80;
+                this.defence = 160;
+                this.maxHitPoints = 80;
+            break;
+        }
+        this.remainingHitPoints = this.maxHitPoints;
+    }
+
+    Fighter(String fighterClass, Hero hero) {
+        this.fighterType = setFighterClass(fighterClass);
+        switch(this.fighterType) {
+            case BLIGHT:
+                this.attack = hero.attack / 2;
+                this.defence = hero.defence / 4;
+                this.maxHitPoints = hero.maxHitPoints / 4;
+                break;
+            case OOZE:
+                this.attack = hero.attack / 4;
+                this.defence = hero.defence / 2;
+                this.maxHitPoints = hero.maxHitPoints / 4;
+                break;
+            case SKELETON:
+                this.attack = hero.attack / 4;
+                this.defence = hero.defence / 4;
+                this.maxHitPoints = hero.maxHitPoints / 2;
+                break;
+            default:
+                this.attack = hero.attack / 2;
+                this.defence = hero.defence / 4;
+                this.maxHitPoints = hero.maxHitPoints / 4;
             break;
         }
         this.remainingHitPoints = this.maxHitPoints;
@@ -67,4 +79,8 @@ public class Fighter {
 
     //     }
     // }
+    public int statSum() {
+        int sum = this.attack + this.defence + this.maxHitPoints;
+        return sum;
+    }
 }

@@ -1,5 +1,9 @@
 package swingy.models;
 
+import java.util.Random;
+
+import swingy.controllers.GetInput;
+
 public class Hero extends Fighter {
     public String name;
     public int exp;
@@ -19,5 +23,25 @@ public class Hero extends Fighter {
         super(heroType, level);
         this.name = name;
         this.exp = exp;
+    }
+
+    public boolean takeArtifact() {
+        String take = "";
+        while (!(take.equals("YES") || take.equals("NO"))) {
+            System.out.print("Do you want to equip this artifact? YES/NO ");
+            take = GetInput.read();
+        }
+        switch(take) {
+            case "YES":
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public void equipArtifact(Artifact artifact) {
+        switch(artifact.artifactType) {
+            case 
+        }
     }
 }
