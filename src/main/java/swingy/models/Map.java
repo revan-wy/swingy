@@ -19,7 +19,7 @@ public class Map {
     }
 
     public static void moveHero() {
-        System.out.print("Choose a compass direction to head in: ");
+        System.out.print("\nChoose a compass direction to head in: "); // 
         switch(GetInput.read()) {
             case "NORTH":
                 x = x - 1;

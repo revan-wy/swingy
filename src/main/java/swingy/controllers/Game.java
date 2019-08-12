@@ -19,11 +19,11 @@ public class Game {
     public static void main (String[] args) {
         Hero hero = setup();
         Show.displayStats(hero);
-        System.out.print("Press Return to start game");
-        GetInput.read();
+        System.out.print("\nPress RETURN to start game"); // put these two lines in VIEW method
+        GetInput.read();                                // put these two lines in VIEW method
         Map.createMap(hero);
-        System.out.print("Map size: " + Map.size + "\n");
-        System.out.print("Hero position: " + x + "," + y + "\n");
+        System.out.print("\nMap size: " + Map.size + "\n");         // put these two lines in VIEW method
+        System.out.print("Hero position: " + x + "," + y + "\n"); // put these two lines in VIEW method
         while (true) {
             Map.moveHero();
             if (Map.encounterVillian()) {

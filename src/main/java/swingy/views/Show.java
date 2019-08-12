@@ -40,6 +40,7 @@ public class Show {
 
     public static void displayStats(Hero hero) {
         System.out.print(
+            "\n" +
             "Hero Name:\t" + hero.name + "\n" +
             "Hero Class:\t" + hero.fighterType + "\n" +
             "Max Hit Points:\t" + hero.maxHitPoints + "\n" +
