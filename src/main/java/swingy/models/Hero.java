@@ -1,7 +1,5 @@
 package swingy.models;
 
-import java.util.Random;
-
 import swingy.controllers.GetInput;
 
 public class Hero extends Fighter {
@@ -41,7 +39,15 @@ public class Hero extends Fighter {
 
     public void equipArtifact(Artifact artifact) {
         switch(artifact.artifactType) {
-            case 
+            case HELM:
+                helm = artifact;
+                break;
+            case ARMOUR:
+                armour = artifact;
+                break;
+            case WEAPON:
+                weapon = artifact;
+                break;
         }
     }
 }
