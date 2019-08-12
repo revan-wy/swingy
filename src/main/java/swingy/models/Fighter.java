@@ -79,8 +79,4 @@ public class Fighter {
 
     //     }
     // }
-    public int statSum() {
-        int sum = this.attack + this.defence + this.maxHitPoints;
-        return sum;
-    }
 }

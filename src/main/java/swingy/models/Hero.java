@@ -26,7 +26,7 @@ public class Hero extends Fighter {
     public boolean takeArtifact() {
         String take = "";
         while (!(take.equals("YES") || take.equals("NO"))) {
-            System.out.print("Do you want to equip this artifact? YES/NO ");
+            System.out.print("Do you want to equip this artifact? YES/NO "); // move this code to VIEW
             take = GetInput.read();
         }
         switch(take) {
@@ -50,4 +50,24 @@ public class Hero extends Fighter {
                 break;
         }
     }
+
+    public int statSum() {
+        int helmBuff = 0;
+        int armourBuff = 0;
+        int weaponBuff = 0;
+        
+        if (this.helm != null) {
+            helmBuff = this.helm.buff;
+        }
+         if (this.armour != null) {
+            armourBuff = this.armour.buff;
+        }
+        if (this.weapon != null) {
+            weaponBuff = this.weapon.buff;
+        }
+        
+        int sum = this.attack + this.defence + this.maxHitPoints + helmBuff + armourBuff + weaponBuff;
+        return sum;
+    }
+
 }

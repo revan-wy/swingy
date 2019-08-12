@@ -29,7 +29,7 @@ public class Game {
             if (Map.encounterVillian()) {
                 fight(hero);
                 Artifact artifact = new Artifact(hero);
-                if (hero.takeArtifact()) {
+                if (artifact.buff != 0 && hero.takeArtifact()) {
                     hero.equipArtifact(artifact);
                 }
             }
@@ -130,9 +130,10 @@ public class Game {
         Villian villian = Villian.getRandomVillian(hero);
         if (villian.statSum() > hero.statSum()) {
             Game.failure();
-        } else {
-
-        }
+            // return false;
+        } // else {
+            // return true;
+        // } 
     }
 
     static void failure() {

@@ -7,8 +7,11 @@ public class Artifact {
     public int buff;
 
     public Artifact(Hero hero) {
-        this.artifactType = findArtifactType();
-        this.buff = findArtifactBuff(hero);
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            this.artifactType = findArtifactType();
+            this.buff = findArtifactBuff(hero);
+        }
     }
 
     ArtifactTypes findArtifactType() {
@@ -29,13 +32,13 @@ public class Artifact {
         double buff = random.nextDouble() / 10;
         switch(artifactType) {
             case ARMOUR:
-                buff = hero.defence * (1 + buff);
+                buff = hero.defence * (0.01 + buff);
                 break;
             case HELM:
-                buff = hero.maxHitPoints * (1 + buff);
+                buff = hero.maxHitPoints * (0.01 + buff);
                 break;
             case WEAPON:
-                buff = hero.attack * (1 + buff);
+                buff = hero.attack * (0.01 + buff);
                 break;
         }
         return (int)buff;

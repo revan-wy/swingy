@@ -19,4 +19,9 @@ public class Villian extends Fighter {
         }
         // return villian;
     }
+
+    public int statSum() {
+        int sum = this.attack + this.defence + this.maxHitPoints;
+        return sum;
+    }
 }
