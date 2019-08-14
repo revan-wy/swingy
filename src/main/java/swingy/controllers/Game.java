@@ -132,9 +132,9 @@ public class Game {
         if (villian.statSum() > hero.statSum()) {
             Game.failure();
             // return false;
-        } // else {
-            // return true;
-        // } 
+        } else {
+            System.out.print("\nYou've defeated the " + villian.fighterType + ".\n");
+        } 
     }
 
     static void failure() {
