@@ -12,6 +12,9 @@ public class Artifact {
             this.artifactType = findArtifactType();
             this.buff = findArtifactBuff(hero);
         }
+        if (this.buff != 0) {
+            System.out.print("\nAn artifact has been dropped.\n");
+        }
     }
 
     ArtifactTypes findArtifactType() {

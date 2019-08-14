@@ -52,20 +52,20 @@ public class Show {
         );
         if (hero.helm != null) {
             System.out.print(
-                "Helm:\t" + hero.helm + "\n" +
-                "Helm Hit Points Buff:\t" + hero.helm.buff + "\n"
+                "Artifact:\t" + hero.helm.artifactType + "\n" +
+                "Helm Hit Points Buff: " + hero.helm.buff + "\n"
             );
         }
         if (hero.armour != null) {
             System.out.print(
-                "Armour:\t" + hero.armour + "\n" +
-                "Armour Defence Buff:\t" + hero.armour.buff + "\n"
+                "Artifact:\t" + hero.armour.artifactType + "\n" +
+                "Armour Defence Buff: " + hero.armour.buff + "\n"
             );
         }
         if (hero.weapon != null) {
             System.out.print(
-                "Weapon:\t" + hero.weapon + "\n" +
-                "Weapon Attack Buff:\t" + hero.weapon.buff + "\n"
+                "Artifact:\t" + hero.weapon.artifactType + "\n" +
+                "Weapon Attack Buff: " + hero.weapon.buff + "\n"
             );
         }
     }
