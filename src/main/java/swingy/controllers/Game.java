@@ -128,6 +128,7 @@ public class Game {
     static void fight(Hero hero) {
         // Villian.getRandomVillian(hero);
         Villian villian = Villian.getRandomVillian(hero);
+        System.out.print("\nA wild " + villian.fighterType + " appeared!\n");
         if (villian.statSum() > hero.statSum()) {
             Game.failure();
             // return false;
