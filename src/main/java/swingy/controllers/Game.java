@@ -26,10 +26,11 @@ public class Game {
         System.out.print("Hero position: " + x + "," + y + "\n"); // put these two lines in VIEW method
         while (true) {
             Map.moveHero();
+            System.out.print("\nHero position: " + x + "," + y + "\n"); // put these two lines in VIEW method
             if (Map.encounterVillian()) {
                 fight(hero);
                 Artifact artifact = new Artifact(hero);
-                if (artifact.buff != 0 && hero.takeArtifact()) {
+                if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
                     hero.equipArtifact(artifact);
                 }
             }
@@ -121,7 +122,7 @@ public class Game {
     }
 
     public static void victory() {
-        System.out.print("You've won\n");
+        System.out.print("\nYou've won\n");
         System.exit(1);
     }
 

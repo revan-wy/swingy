@@ -1,6 +1,7 @@
 package swingy.models;
 
 import swingy.controllers.GetInput;
+import swingy.views.Show;
 
 public class Hero extends Fighter {
     public String name;
@@ -23,10 +24,12 @@ public class Hero extends Fighter {
         this.exp = exp;
     }
 
-    public boolean takeArtifact() {
+    public boolean takeArtifact(Artifact artifact) {
+        Show.displayStats(artifact);
+        Show.displayStats(this);
         String take = "";
         while (!(take.equals("YES") || take.equals("NO"))) {
-            System.out.print("Do you want to equip this artifact? YES/NO "); // move this code to VIEW
+            System.out.print("\nDo you want to equip this artifact? YES/NO "); // move this code to VIEW
             take = GetInput.read();
         }
         switch(take) {

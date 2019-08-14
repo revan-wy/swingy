@@ -1,5 +1,6 @@
 package swingy.views;
 
+import swingy.models.Artifact;
 import swingy.models.Hero;
 
 public class Show {
@@ -67,5 +68,22 @@ public class Show {
                 "Weapon Attack Buff:\t" + hero.weapon.buff + "\n"
             );
         }
+    }
+
+    public static void displayStats(Artifact artifact) {
+        String affectedStat = "";
+        switch(artifact.artifactType) {
+            case ARMOUR:
+                affectedStat = "Defence";
+                break;
+            case WEAPON:
+                affectedStat = "Attack";
+                break;
+            case HELM:
+                affectedStat = "Hit Points";
+                break;
+        }
+        System.out.print("\nArtifact Type: \t" + artifact.artifactType + "\n");
+        System.out.print(affectedStat + " Bonus: \t" + artifact.buff + "\n");
     }
 }
