@@ -103,6 +103,10 @@ public class Show {
         System.out.print("\nDo you want to equip this artifact? YES/NO "); // move this code to VIEW
     }
     
+    public static void fightOrRun() {
+        System.out.print("\nDo you want to fight or try to run away? FIGHT/RUN ");
+    }
+    
     public static void fileNotFoundException() {
         System.out.println("Couldn't find file save.txt");
         GetInput.read();
@@ -150,6 +154,14 @@ public class Show {
         GetInput.read();
     }
 
+    public static void runFail() {
+        System.out.print("\nYour escape attempt failed. Now, FIGHT!\n");
+    }
+    
+    public static void runSuccess(Villian villian) {
+        System.out.print("\nYou've managed to escape from the " + villian.fighterType + ".\n");
+    }
+    
     public static void villianAppeared(Villian villian) {
         System.out.print("\nA wild " + villian.fighterType + " appeared!\n");
         GetInput.read();

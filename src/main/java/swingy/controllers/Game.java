@@ -23,10 +23,11 @@ public class Game {
             Map.moveHero();
             Show.heroPos();
             if (Map.encounterVillian()) {
-                fight(hero);
-                Artifact artifact = new Artifact(hero);
-                if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
-                    hero.equipArtifact(artifact);
+                if (fight(hero)) {
+                    Artifact artifact = new Artifact(hero);
+                    if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
+                        hero.equipArtifact(artifact);
+                    }
                 }
             }
         }
@@ -99,15 +100,19 @@ public class Game {
         System.exit(1);
     }
 
-    static void fight(Hero hero) {
+    static boolean fight(Hero hero) {
         // Villian.getRandomVillian(hero);
         Villian villian = Villian.getRandomVillian(hero);
         Show.villianAppeared(villian);
+        if (hero.run(villian)) {
+            return false;
+        }
         if (villian.statSum() > hero.statSum()) {
             Game.failure();
-            // return false;
+            return true;
         } else {
             Show.villianDefeated(villian);
+            return true;
         } 
     }
 

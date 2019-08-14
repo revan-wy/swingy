@@ -1,5 +1,7 @@
 package swingy.models;
 
+import java.util.Random;
+
 import swingy.controllers.GetInput;
 import swingy.views.Show;
 
@@ -71,6 +73,28 @@ public class Hero extends Fighter {
         
         int sum = this.attack + this.defence + this.maxHitPoints + helmBuff + armourBuff + weaponBuff;
         return sum;
+    }
+
+    public boolean run(Villian villian) {
+        String action = "";
+        while (!(action.equals("FIGHT") || action.equals("RUN"))) {
+            Show.fightOrRun();
+            action = GetInput.read();
+        }
+        if (action.equals("FIGHT")) {
+            return false;
+        } else {
+            Random random = new Random();
+            boolean result = random.nextBoolean();
+            if (result) {
+                Show.runSuccess(villian);
+                GetInput.read();
+            } else {
+                Show.runFail();
+                GetInput.read();
+            }
+            return result;
+        }
     }
 
 }
