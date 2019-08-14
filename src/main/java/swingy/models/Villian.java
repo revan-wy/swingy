@@ -3,10 +3,6 @@ package swingy.models;
 import java.util.Random;
 
 public class Villian extends Fighter {
-    Villian(String type, Hero hero) {
-        super(type, hero);
-    }
-    
     public static Villian getRandomVillian(Hero hero) {
         Random random = new Random();
         double doubleMax3 = random.nextDouble() * 3;
@@ -24,4 +20,9 @@ public class Villian extends Fighter {
         int sum = this.attack + this.defence + this.maxHitPoints;
         return sum;
     }
+    
+    Villian(String type, Hero hero) {
+        super(type, hero);
+    }
+    
 }

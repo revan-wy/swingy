@@ -12,6 +12,20 @@ public class Hero extends Fighter {
     public Artifact armour;
     public Artifact weapon;
 
+    public void equipArtifact(Artifact artifact) {
+        switch(artifact.artifactType) {
+            case HELM:
+                helm = artifact;
+                break;
+            case ARMOUR:
+                armour = artifact;
+                break;
+            case WEAPON:
+                weapon = artifact;
+                break;
+        }
+    }
+
     public Hero() {}
     
     public Hero(String name, String heroType, int level) {
@@ -26,33 +40,25 @@ public class Hero extends Fighter {
         this.exp = exp;
     }
 
-    public boolean takeArtifact(Artifact artifact) {
-        Show.displayStats(artifact);
-        Show.displayStats(this);
-        String take = "";
-        while (!(take.equals("YES") || take.equals("NO"))) {
-            Show.equipAsk();
-            take = GetInput.read();
+    public boolean run(Villian villian) {
+        String action = "";
+        while (!(action.equals("FIGHT") || action.equals("RUN"))) {
+            Show.fightOrRun();
+            action = GetInput.read();
         }
-        switch(take) {
-            case "YES":
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    public void equipArtifact(Artifact artifact) {
-        switch(artifact.artifactType) {
-            case HELM:
-                helm = artifact;
-                break;
-            case ARMOUR:
-                armour = artifact;
-                break;
-            case WEAPON:
-                weapon = artifact;
-                break;
+        if (action.equals("FIGHT")) {
+            return false;
+        } else {
+            Random random = new Random();
+            boolean result = random.nextBoolean();
+            if (result) {
+                Show.runSuccess(villian);
+                GetInput.read();
+            } else {
+                Show.runFail();
+                GetInput.read();
+            }
+            return result;
         }
     }
 
@@ -75,25 +81,19 @@ public class Hero extends Fighter {
         return sum;
     }
 
-    public boolean run(Villian villian) {
-        String action = "";
-        while (!(action.equals("FIGHT") || action.equals("RUN"))) {
-            Show.fightOrRun();
-            action = GetInput.read();
+    public boolean takeArtifact(Artifact artifact) {
+        Show.displayStats(artifact);
+        Show.displayStats(this);
+        String take = "";
+        while (!(take.equals("YES") || take.equals("NO"))) {
+            Show.equipAsk();
+            take = GetInput.read();
         }
-        if (action.equals("FIGHT")) {
-            return false;
-        } else {
-            Random random = new Random();
-            boolean result = random.nextBoolean();
-            if (result) {
-                Show.runSuccess(villian);
-                GetInput.read();
-            } else {
-                Show.runFail();
-                GetInput.read();
-            }
-            return result;
+        switch(take) {
+            case "YES":
+                return true;
+            default:
+                return false;
         }
     }
 

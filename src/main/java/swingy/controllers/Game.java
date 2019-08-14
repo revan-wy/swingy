@@ -13,6 +13,69 @@ import swingy.models.Villian;
 import swingy.views.*;
 
 public class Game {
+    public static Hero createNewHero() {
+        String name = "";
+        String heroClass = "";
+        
+        Show.askHeroName();
+        name = GetInput.read();
+
+        while (!(FighterTypes.contains(heroClass))) {
+            Show.classLevelZeroDetails();
+            Show.askHeroClass();
+            heroClass = GetInput.read();
+        }
+
+        // public String name;
+        // public FighterClass fighterClass;
+        return new Hero(name, heroClass, 0);
+    }
+
+    static void failure() {
+        Show.lost();
+        System.exit(1);
+    }
+    
+    static boolean fight(Hero hero) {
+        // Villian.getRandomVillian(hero);
+        Villian villian = Villian.getRandomVillian(hero);
+        Show.villianAppeared(villian);
+        if (hero.run(villian)) {
+            return false;
+        }
+        if (villian.statSum() > hero.statSum()) {
+            Game.failure();
+            return true;
+        } else {
+            Show.villianDefeated(villian);
+            return true;
+        } 
+    }
+
+    private static Hero loadExistingHero() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("save.txt"));
+            String line = reader.readLine();
+            if (line != null) {
+                reader.close();
+                return new Hero(line.split(" ")[0].toUpperCase(), line.split(" ")[1].toUpperCase(),
+                Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]));
+            }
+            reader.close();
+            return createNewHero();
+        } catch (FileNotFoundException e) {
+            Show.fileNotFoundException();
+            return createNewHero();
+        } catch (IOException e) {
+            Show.iOException();
+            return createNewHero();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            Show.arrayIndexOutOfBoundsException();
+            return createNewHero();
+        } 
+
+    }
+
     public static void main (String[] args) {
         Hero hero = setup();
         Show.displayStats(hero);
@@ -53,71 +116,9 @@ public class Game {
         }
     }
 
-    public static Hero createNewHero() {
-        String name = "";
-        String heroClass = "";
-        
-        Show.askHeroName();
-        name = GetInput.read();
-
-        while (!(FighterTypes.contains(heroClass))) {
-            Show.classLevelZeroDetails();
-            Show.askHeroClass();
-            heroClass = GetInput.read();
-        }
-
-        // public String name;
-        // public FighterClass fighterClass;
-        return new Hero(name, heroClass, 0);
-    }
-
-    private static Hero loadExistingHero() {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("save.txt"));
-            String line = reader.readLine();
-            if (line != null) {
-                reader.close();
-                return new Hero(line.split(" ")[0].toUpperCase(), line.split(" ")[1].toUpperCase(),
-                Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]));
-            }
-            reader.close();
-            return createNewHero();
-        } catch (FileNotFoundException e) {
-            Show.fileNotFoundException();
-            return createNewHero();
-        } catch (IOException e) {
-            Show.iOException();
-            return createNewHero();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            Show.arrayIndexOutOfBoundsException();
-            return createNewHero();
-        } 
-
-    }
-
     public static void victory() {
         Show.won();
         System.exit(1);
     }
 
-    static boolean fight(Hero hero) {
-        // Villian.getRandomVillian(hero);
-        Villian villian = Villian.getRandomVillian(hero);
-        Show.villianAppeared(villian);
-        if (hero.run(villian)) {
-            return false;
-        }
-        if (villian.statSum() > hero.statSum()) {
-            Game.failure();
-            return true;
-        } else {
-            Show.villianDefeated(villian);
-            return true;
-        } 
-    }
-
-    static void failure() {
-        Show.lost();
-        System.exit(1);
-    }
 }

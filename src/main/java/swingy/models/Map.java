@@ -19,6 +19,15 @@ public class Map {
         y = x;
     }
 
+    public static boolean encounterVillian() {
+        Random random = new Random();
+        if (random.nextDouble() < 0.66666) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     public static void moveHero() {
         Show.chooseDirection();
         switch(GetInput.read()) {
@@ -40,12 +49,4 @@ public class Map {
         }
     }
 
-    public static boolean encounterVillian() {
-        Random random = new Random();
-        if (random.nextDouble() < 0.66666) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

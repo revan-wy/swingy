@@ -19,19 +19,6 @@ public class Artifact {
         }
     }
 
-    ArtifactTypes findArtifactType() {
-        Random random = new Random();
-        double type = random.nextDouble() * 3;
-        switch((int)type) {
-            case 0:
-                return ArtifactTypes.ARMOUR;
-            case 1:
-                return ArtifactTypes.HELM;
-            default:
-                return ArtifactTypes.WEAPON;
-        }
-    }
-
     int findArtifactBuff(Hero hero) {
         Random random = new Random();
         double buff = random.nextDouble() / 10;
@@ -48,4 +35,18 @@ public class Artifact {
         }
         return (int)buff;
     }
+    
+    ArtifactTypes findArtifactType() {
+        Random random = new Random();
+        double type = random.nextDouble() * 3;
+        switch((int)type) {
+            case 0:
+                return ArtifactTypes.ARMOUR;
+            case 1:
+                return ArtifactTypes.HELM;
+            default:
+                return ArtifactTypes.WEAPON;
+        }
+    }
+
 }
