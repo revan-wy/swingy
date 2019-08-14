@@ -42,6 +42,10 @@ public class Map {
 
     public static boolean encounterVillian() {
         Random random = new Random();
-        return random.nextBoolean();
+        if (random.nextDouble() < 0.66666) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
