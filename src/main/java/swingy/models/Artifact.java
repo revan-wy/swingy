@@ -2,6 +2,8 @@ package swingy.models;
 
 import java.util.Random;
 
+import swingy.views.Show;
+
 public class Artifact {
     public ArtifactTypes artifactType;
     public int buff;
@@ -13,7 +15,7 @@ public class Artifact {
             this.buff = findArtifactBuff(hero);
         }
         if (this.buff != 0) {
-            System.out.print("\nAn artifact has been dropped.\n");
+            Show.artifactDropped();
         }
     }
 

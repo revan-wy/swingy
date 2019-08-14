@@ -29,7 +29,7 @@ public class Hero extends Fighter {
         Show.displayStats(this);
         String take = "";
         while (!(take.equals("YES") || take.equals("NO"))) {
-            System.out.print("\nDo you want to equip this artifact? YES/NO "); // move this code to VIEW
+            Show.equipAsk();
             take = GetInput.read();
         }
         switch(take) {

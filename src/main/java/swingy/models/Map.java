@@ -7,6 +7,7 @@ import java.util.Random;
 
 import swingy.controllers.Game;
 import swingy.controllers.GetInput;
+import swingy.views.Show;
 
 public class Map {
     public static int size;
@@ -19,7 +20,7 @@ public class Map {
     }
 
     public static void moveHero() {
-        System.out.print("\nChoose a compass direction to head in: "); // 
+        Show.chooseDirection();
         switch(GetInput.read()) {
             case "NORTH":
                 x = x - 1;

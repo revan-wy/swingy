@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import swingy.views.Show;
+
 public class GetInput {
     static BufferedReader br;
 
@@ -21,7 +23,7 @@ public class GetInput {
             input = br.readLine();
             return input.toUpperCase();
         } catch (IOException e) {
-            System.out.println("Reading input failed");
+            Show.readIOException();
             System.exit(1);
             return "";
         }
