@@ -48,6 +48,7 @@ public class Game {
             return true;
         } else {
             Show.villianDefeated(villian);
+            hero.gainExp(villian);
             return true;
         } 
     }

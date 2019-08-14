@@ -112,6 +112,10 @@ public class Show {
         GetInput.read();
     }
     
+    public static void gainedExp(double exp, Hero hero) {
+        System.out.print("\n" + hero.name + " has gained " + (int)exp + " experience points.\n");
+    }
+    
     public static void heroPos() {
         System.out.print("\nHero position: " + x + "," + y + "\n"); // put these two lines in VIEW method
         GetInput.read();
@@ -133,6 +137,10 @@ public class Show {
         GetInput.read();
     }
 
+    public static void leveledUp(Hero hero) {
+        System.out.print("\n" + hero.name + " has gained a level.\n");
+    }
+    
     public static void lost() {
         System.out.print("You've lost\n");
         GetInput.read();

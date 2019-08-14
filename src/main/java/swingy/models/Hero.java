@@ -26,6 +26,15 @@ public class Hero extends Fighter {
         }
     }
 
+    public void gainExp(Villian villian) {
+        int rawExp = this.exp + ((this.level * 1000 + (this.level - 1) * (this.level - 1) * 450) / 10);
+        double actualExp = (double)rawExp * ((double)villian.statSum() / (double)this.statSum()) * 3;
+        this.exp = this.exp + (int)actualExp;
+        Show.gainedExp(actualExp, this);
+        GetInput.read();
+        levelUp();
+    }
+
     public Hero() {}
     
     public Hero(String name, String heroType, int level) {
@@ -40,6 +49,16 @@ public class Hero extends Fighter {
         this.exp = exp;
     }
 
+    public void levelUp() {
+        int requiredExp = this.level * 1000 + (this.level - 1) * (this.level - 1) * 450;
+        if (this.exp > requiredExp) {
+            this.level += 1;
+            this.exp -= requiredExp;
+            Show.leveledUp(this);
+            GetInput.read();
+        }
+    }
+    
     public boolean run(Villian villian) {
         String action = "";
         while (!(action.equals("FIGHT") || action.equals("RUN"))) {
