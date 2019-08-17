@@ -5,7 +5,7 @@ import static swingy.models.Coordinates.y;
 
 import java.util.Random;
 
-import swingy.controllers.Game;
+import swingy.controllers.Swingy;
 import swingy.controllers.GetInput;
 import swingy.views.Show;
 
@@ -45,7 +45,7 @@ public class Map {
                 break;
         }
         if (x <= 0 || x > size || y <= 0 || y > size) {
-            Game.victory();
+            Swingy.victory();
         }
     }
 

@@ -5,14 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import swingy.models.Artifact;
+// import swingy.models.Artifact;
 import swingy.models.FighterTypes;
 import swingy.models.Hero;
-import swingy.models.Map;
+// import swingy.models.Map;
 import swingy.models.Villian;
 import swingy.views.*;
 
-public class Game {
+public class Swingy {
     public static Hero createNewHero() {
         String name = "";
         String heroClass = "";
@@ -44,7 +44,7 @@ public class Game {
             return false;
         }
         if (villian.statSum() > hero.statSum()) {
-            Game.failure();
+            Swingy.failure();
             return true;
         } else {
             Show.villianDefeated(villian);
@@ -78,23 +78,24 @@ public class Game {
     }
 
     public static void main (String[] args) {
-        Hero hero = setup();
-        Show.displayStats(hero);
-        Show.pressReturn();
-        Map.createMap(hero);
-        Show.mapSizeAndPos();
-        while (true) {
-            Map.moveHero();
-            Show.heroPos();
-            if (Map.encounterVillian()) {
-                if (fight(hero)) {
-                    Artifact artifact = new Artifact(hero);
-                    if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
-                        hero.equipArtifact(artifact);
-                    }
-                }
-            }
-        }
+        Gui.showtime();
+        // Hero hero = setup();
+        // Show.displayStats(hero);
+        // Show.pressReturn();
+        // Map.createMap(hero);
+        // Show.mapSizeAndPos();
+        // while (true) {
+        //     Map.moveHero();
+        //     Show.heroPos();
+        //     if (Map.encounterVillian()) {
+        //         if (fight(hero)) {
+        //             Artifact artifact = new Artifact(hero);
+        //             if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
+        //                 hero.equipArtifact(artifact);
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     public static Hero setup () {

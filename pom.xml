@@ -31,7 +31,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>swingy.controllers.Game</mainClass>
+              <mainClass>swingy.controllers.Swingy</mainClass>
             </manifest>
           </archive>
         </configuration>
