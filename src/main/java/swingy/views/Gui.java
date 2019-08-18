@@ -10,6 +10,16 @@ public class Gui {
     static JLabel outputArea;
     public static JTextField tf;
     public static boolean returnPress = false;
+    static String outputString;
+    
+    static void print() {
+        Gui.outputArea.setText(Gui.stringToHtml(outputString));
+        outputString = "";
+    }
+    
+    static void print(String string) {
+        Gui.outputArea.setText(Gui.stringToHtml(string));
+    }
     
     public static void showtime() {
 

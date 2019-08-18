@@ -11,13 +11,29 @@ import swingy.models.Villian;
 
 public class Show {
     public static void arrayIndexOutOfBoundsException() {
-        System.out.println("Specify save file");
-        GetInput.read();
+        String output = 
+            "\n" + 
+            "Specify save file" + "\n"
+        ;
+        if (!Gui.useGui) {
+            System.out.print(output);
+            GetInput.read();
+        } else {
+            Gui.print(output);
+        }
     }
     
     public static void artifactDropped() {
-        System.out.print("\nAn artifact has been dropped.\n");
-        GetInput.read();
+        String output = 
+            "\n" + 
+            "An artifact has been dropped." + "\n"
+        ;
+        if (!Gui.useGui) {
+            System.out.print(output);
+            GetInput.read();
+        } else {
+            Gui.print(output);
+        }
     }
     
     public static void askHeroClass() {
@@ -37,16 +53,19 @@ public class Show {
     public static void classLevelZeroDetails() {
         System.out.print(
             "\n" +
-            "           Rogue   Thief   Soldier" +  "\n" +
-            "Hit Points   80      80      160" + "\n" +
-            "Defence      80     160       80" + "\n" +
-            "Attack      160      80       80" +  "\n"
+            "           Rogue   Thief   Soldier" + "\n" +
+            "Hit Points   80      80      160"   + "\n" +
+            "Defence      80     160       80"   + "\n" +
+            "Attack      160      80       80"   + "\n"
         );
         GetInput.read();
     }
 
     public static void chooseDirection() {
-        System.out.print("\nChoose a compass direction to head in: "); // 
+        System.out.print(
+            "\n" + 
+            "Choose a compass direction to head in: "
+        );
     }
     
     public static void displayStats(Artifact artifact) {
@@ -62,8 +81,13 @@ public class Show {
                 affectedStat = "Hit Points";
                 break;
         }
-        System.out.print("\nArtifact Type: \t" + artifact.artifactType + "\n");
-        System.out.print(affectedStat + " Bonus: \t" + artifact.buff + "\n");
+        System.out.print(
+            "\n" + 
+            "Artifact Type: \t" + artifact.artifactType + "\n"
+        );
+        System.out.print(
+            affectedStat + " Bonus: \t" + artifact.buff + "\n"
+        );
         GetInput.read();
     }
 
@@ -100,93 +124,145 @@ public class Show {
     }        
     
     public static void equipAsk() {
-        System.out.print("\nDo you want to equip this artifact? YES/NO "); // move this code to VIEW
+        System.out.print(
+            "\n" + 
+            "Do you want to equip this artifact? YES/NO "
+        );
     }
     
     public static void fightOrRun() {
-        System.out.print("\nDo you want to fight or try to run away? FIGHT/RUN ");
+        System.out.print(
+            "\n" + 
+            "Do you want to fight or try to run away? FIGHT/RUN "
+        );
     }
     
     public static void fileNotFoundException() {
-        System.out.println("Couldn't find file save.txt");
+        System.out.print(
+            "\n" + 
+            "Couldn't find file save.txt" + "\n"
+        );
         GetInput.read();
     }
     
     public static void gainedExp(double exp, Hero hero) {
-        System.out.print("\n" + hero.name + " has gained " + (int)exp + " experience points.\n");
+        System.out.print(
+            "\n" + 
+            hero.name + " has gained " + (int)exp + " experience points." + "\n"
+        );
     }
     
     public static void heroPos() {
-        System.out.print("\nHero position: " + x + "," + y + "\n"); // put these two lines in VIEW method
+        System.out.print(
+            "\n" + 
+            "Hero position: " + x + "," + y + "\n"
+        );
         GetInput.read();
     }
 
     public static void initialScreen() {
-        String output = "\n" +
-                        "\n" +
-                        "WELCOME!!!\n" +
-                        "\n" +
-                        "Enter CREATE to create a new character.\n" +
-                        "Enter LOAD to load an existing character.\n" +
-                        "Now, choose: ";
-
+        String output = 
+            "\n" +
+            "\n" +
+            "WELCOME!!!\n" +
+            "\n" +
+            "Enter CREATE to create a new character.\n" +
+            "Enter LOAD to load an existing character.\n" +
+            "Now, choose: "
+        ;
+        
         if (Gui.useGui == false) {
             System.out.print(output);
         } else {
-            Gui.outputArea.setText(Gui.stringToHtml(output));
+            Gui.print(output);
         }
     }                                        
 
     public static void iOException() {
-        System.out.println("There was an error while reading the file save.txt");
+        System.out.print(
+            "\n" + 
+            "There was an error while reading the file save.txt" + "\n"
+        );
         GetInput.read();
     }
 
     public static void leveledUp(Hero hero) {
-        System.out.print("\n" + hero.name + " has gained a level.\n");
+        System.out.print(
+            "\n" + 
+            hero.name + " has gained a level." + "\n"
+        );
     }
     
     public static void lost() {
-        System.out.print("You've lost\n");
+        System.out.print(
+            "\n" + 
+            "You've lost" + "\n"
+        );
         GetInput.read();
     }
     
     public static void mapSizeAndPos() {
-        System.out.print("\nMap size: " + Map.size + "\n");
-        System.out.print("Hero position: " + x + "," + y + "\n");
+        System.out.print(
+            "\n" + 
+            "Map size: " + Map.size + "\n"
+        );
+        System.out.print(
+            "Hero position: " + x + "," + y + "\n"
+        );
         GetInput.read();
     }
 
     public static void pressReturn() {
-        System.out.print("\nPress RETURN to start game");
+        System.out.print(
+            "\n" + 
+            "Press RETURN to start game" + "\n"
+        );
         GetInput.read();
     }
 
     public static void readIOException() {
-        System.out.println("Reading input failed");
+        System.out.print(
+            "\n" + 
+            "Reading input failed" + "\n"
+        );
         GetInput.read();
     }
 
     public static void runFail() {
-        System.out.print("\nYour escape attempt failed. Now, FIGHT!\n");
+        System.out.print(
+            "\n" + 
+            "Your escape attempt failed. Now, FIGHT!" + "\n"
+        );
     }
     
     public static void runSuccess(Villian villian) {
-        System.out.print("\nYou've managed to escape from the " + villian.fighterType + ".\n");
+        System.out.print(
+            "\n" + 
+            "You've managed to escape from the " + villian.fighterType + ".\n"
+        );
     }
     
     public static void villianAppeared(Villian villian) {
-        System.out.print("\nA wild " + villian.fighterType + " appeared!\n");
+        System.out.print(
+            "\n" + 
+            "A wild " + villian.fighterType + " appeared!"+ "\n"
+        );
         GetInput.read();
     }
 
     public static void villianDefeated(Villian villian) {
-        System.out.print("\nYou've defeated the " + villian.fighterType + ".\n");
+        System.out.print(
+            "\n" + 
+            "You've defeated the " + villian.fighterType + ".\n"
+        );
         GetInput.read();
     }
     
     public static void won() {
-        System.out.print("\nYou've won\n");
+        System.out.print(
+            "\n" + 
+            "You've won" + "\n"
+        );
         GetInput.read();
     }
 }
