@@ -29,6 +29,12 @@ public class Swingy {
         return new Hero(name, heroClass, 0);
     }
 
+    static void exit(String input) {
+        if (input.equals("EXIT")) {
+            System.exit(1);
+        }
+    }
+    
     static void failure() {
         Show.lost();
         System.exit(1);

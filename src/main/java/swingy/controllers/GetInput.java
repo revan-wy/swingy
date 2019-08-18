@@ -23,7 +23,6 @@ public class GetInput {
             }
             try {
                 input = br.readLine();
-                return input.toUpperCase();
             } catch(IOException e) {
                 Show.readIOException();
                 System.exit(1);
@@ -35,7 +34,9 @@ public class GetInput {
             } 
             Gui.returnPress = false;
             Gui.tf.setText("");
-            return input.toUpperCase();
         }
+        input = input.toUpperCase();
+        Swingy.exit(input);
+        return input.toUpperCase();
     }
 }
