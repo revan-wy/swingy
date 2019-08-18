@@ -73,7 +73,6 @@ public class Hero extends Fighter {
             } else {
                 Show.runFail();
             }
-            GetInput.read();
             return result;
         }
     }

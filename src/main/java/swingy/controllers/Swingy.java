@@ -78,7 +78,7 @@ public class Swingy {
     public static void main (String[] args) {
         setDisplayType(args);
         Hero hero = setup();
-        Show.displayStats(hero);
+        Show.displayNewHeroStats(hero);
         // if (!Gui.useGui) {
         //     Show.pressReturn();
         // }

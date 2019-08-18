@@ -45,7 +45,8 @@ public class Show {
         if (!Gui.useGui) {
             System.out.print(output);
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
+            Gui.print();
         }
     }
 
@@ -73,7 +74,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.outputString = Gui.outputString + output;
+            Gui.outputString = Gui.outputString + output + "\n";
         }
     }
 
@@ -89,6 +90,16 @@ public class Show {
             Gui.print();
         }
     }
+    
+    public static void displayNewHeroStats(Hero hero) {
+        String output = getHeroStatOutput(hero);
+        if (!Gui.useGui) {
+            System.out.print(output);
+        } else {
+            Gui.print(output);
+        }
+        GetInput.read();
+    }        
     
     public static void displayStats(Artifact artifact) {
         String output;
@@ -116,11 +127,72 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output + "\n";
         }
     }
 
     public static void displayStats(Hero hero) {
+        String output = getHeroStatOutput(hero);
+        if (!Gui.useGui) {
+            System.out.print(output);
+            GetInput.read();
+        } else {
+            Gui.outputString = Gui.outputString + output + "\n";
+        }
+    }        
+    
+    public static void equipAsk() {
+        String output = 
+            "\n" + 
+            "Do you want to equip this artifact? YES/NO "
+        ;
+        if (!Gui.useGui) {
+            System.out.print(output);
+        } else {
+            Gui.outputString = Gui.outputString + output;
+            Gui.print();
+        }
+    }
+    
+    public static void fightOrRun() {
+        String output = 
+            "\n" + 
+            "Do you want to fight or try to run away? FIGHT/RUN "
+        ;
+        if (!Gui.useGui) {
+            System.out.print(output);
+        } else {
+            Gui.print(output);
+        }
+    }
+    
+    public static void fileNotFoundException() {
+        String output = 
+            "\n" + 
+            "Couldn't find file save.txt" + "\n"
+        ;
+        if (!Gui.useGui) {
+            System.out.print(output);
+        } else {
+            Gui.print(output);
+        }
+        GetInput.read();
+    }
+    
+    public static void gainedExp(double exp, Hero hero) {
+        String output = 
+            "\n" + 
+            hero.name + " has gained " + (int)exp + " experience points."
+        ;
+        if (!Gui.useGui) {
+            System.out.print(output);
+        } else {
+            Gui.print(output);
+        }
+        GetInput.read();
+    }
+    
+    static String getHeroStatOutput(Hero hero) {
         String output =
             "\n" +
             "Hero Name:\t" + hero.name + "\n" +
@@ -152,63 +224,7 @@ public class Show {
                 "Weapon Attack Buff: " + hero.weapon.buff
             ;    
         }    
-        if (!Gui.useGui) {
-            System.out.print(output);
-            GetInput.read();
-        } else {
-            Gui.print(output);
-        }
-    }        
-    
-    public static void equipAsk() {
-        String output = 
-            "\n" + 
-            "Do you want to equip this artifact? YES/NO "
-        ;
-        if (!Gui.useGui) {
-            System.out.print(output);
-        } else {
-            Gui.print(output);
-        }
-    }
-    
-    public static void fightOrRun() {
-        String output = 
-            "\n" + 
-            "Do you want to fight or try to run away? FIGHT/RUN "
-        ;
-        if (!Gui.useGui) {
-            System.out.print(output);
-        } else {
-            Gui.outputString = Gui.outputString + output;
-            Gui.print();
-        }
-    }
-    
-    public static void fileNotFoundException() {
-        String output = 
-            "\n" + 
-            "Couldn't find file save.txt" + "\n"
-        ;
-        if (!Gui.useGui) {
-            System.out.print(output);
-            GetInput.read();
-        } else {
-            Gui.outputString = Gui.outputString + output;
-        }
-    }
-    
-    public static void gainedExp(double exp, Hero hero) {
-        String output = 
-            "\n" + 
-            hero.name + " has gained " + (int)exp + " experience points."
-        ;
-        if (!Gui.useGui) {
-            System.out.print(output);
-            GetInput.read();
-        } else {
-            Gui.print(output);
-        }
+        return output;
     }
     
     public static void heroPos() {
@@ -218,10 +234,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
 
     public static void initialScreen() {
@@ -249,10 +265,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
-            Gui.outputString = Gui.outputString + output;
+            Gui.print(output);
         }
+        GetInput.read();
 }
 
     public static void leveledUp(Hero hero) {
@@ -262,10 +278,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void lost() {
@@ -275,10 +291,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void mapSizeAndPos() {
@@ -291,7 +307,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.outputString = Gui.outputString + output;
+            Gui.outputString = Gui.outputString + output + "\n";
         }
     }
 
@@ -302,10 +318,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
 
     public static void readIOException() {
@@ -315,10 +331,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
 
     public static void runFail() {
@@ -331,6 +347,7 @@ public class Show {
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void runSuccess(Villian villian) {
@@ -341,9 +358,10 @@ public class Show {
         if (!Gui.useGui) {
             System.out.print(output);
         } else {
-            Gui.outputString = Gui.outputString + output;
+            Gui.print(output);
             // Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void villianAppeared(Villian villian) {
@@ -353,10 +371,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
-            Gui.outputString = Gui.outputString + output;
+            Gui.print(output);
         }
+        GetInput.read();
     }
 
     public static void villianDefeated(Villian villian) {
@@ -366,10 +384,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void won() {
@@ -379,9 +397,9 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
 }
