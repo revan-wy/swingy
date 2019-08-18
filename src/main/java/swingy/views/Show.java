@@ -130,7 +130,11 @@ public class Show {
                         "Enter LOAD to load an existing character.\n" +
                         "Now, choose: ";
 
-        System.out.print(output);
+        if (Gui.useGui == false) {
+            System.out.print(output);
+        } else {
+            Gui.outputArea.setText(Gui.stringToHtml(output));
+        }
     }                                        
 
     public static void iOException() {

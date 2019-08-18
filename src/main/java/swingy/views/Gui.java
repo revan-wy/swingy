@@ -6,13 +6,14 @@ import java.awt.*;
 public class Gui {
     public static boolean useGui = false;
     static JFrame frame;
+    static JLabel outputArea;
     
     public static void showtime() {
 
         //Creating the Frame
         frame = new JFrame("Revan-wy's Swingy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 800);
+        frame.setSize(450, 450);
 
         //Creating the panel at bottom and adding components
         JPanel panel = new JPanel(); // the panel is not visible in output
@@ -22,11 +23,15 @@ public class Gui {
         panel.add(tf);
 
         // Text Area at the Center
-        JTextArea ta = new JTextArea();
+        outputArea = new JLabel();
 
         //Adding Components to the frame.
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
-        frame.getContentPane().add(BorderLayout.CENTER, ta);
+        frame.getContentPane().add(BorderLayout.CENTER, outputArea);
         frame.setVisible(true);
+    }
+
+    static String stringToHtml(String string) {
+        return "<html>" + string.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>";
     }
 }
