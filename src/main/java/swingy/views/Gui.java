@@ -55,6 +55,6 @@ public class Gui {
     }
 
     static String stringToHtml(String string) {
-        return "<html><pre>" + string.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>").replaceAll("\t", "&#9 ") + "</pre></html>";
+        return "<html><pre>" + string.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</pre></html>";
     }
 }

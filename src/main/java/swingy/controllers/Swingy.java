@@ -62,13 +62,13 @@ public class Swingy {
             }
             reader.close();
             return createNewHero();
-        } catch (FileNotFoundException e) {
+        } catch(FileNotFoundException e) {
             Show.fileNotFoundException();
             return createNewHero();
-        } catch (IOException e) {
+        } catch(IOException e) {
             Show.iOException();
             return createNewHero();
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch(ArrayIndexOutOfBoundsException e) {
             Show.arrayIndexOutOfBoundsException();
             return createNewHero();
         } 
@@ -77,6 +77,7 @@ public class Swingy {
 
     public static void main (String[] args) {
         setDisplayType(args);
+        // Gui.useGui = true;
         Hero hero = setup();
         Show.displayNewHeroStats(hero);
         // if (!Gui.useGui) {
@@ -86,12 +87,12 @@ public class Swingy {
         while (true) {
             // Show.heroPos();
             Show.mapSizeAndPos();
-            Map.moveHero();
+            Map.moveHero(); //try
             if (Map.encounterVillian()) {
                 if (fight(hero)) {
                     Artifact artifact = new Artifact(hero);
-                    if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
-                        hero.equipArtifact(artifact);
+                    if (artifact.buff != 0 && hero.takeArtifact(artifact)) { // try
+                        hero.equipArtifact(artifact); // try
                     }
                 }
             }

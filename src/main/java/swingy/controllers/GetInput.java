@@ -24,7 +24,7 @@ public class GetInput {
             try {
                 input = br.readLine();
                 return input.toUpperCase();
-            } catch (IOException e) {
+            } catch(IOException e) {
                 Show.readIOException();
                 System.exit(1);
                 return "";

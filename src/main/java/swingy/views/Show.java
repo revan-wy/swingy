@@ -117,11 +117,11 @@ public class Show {
         }
         output = 
             "\n" + 
-            "Artifact Type: \t" + artifact.artifactType
+            "Artifact Type:  " + artifact.artifactType
         ;
         output = output + 
             "\n" +
-            affectedStat + " Bonus: \t" + artifact.buff
+            affectedStat + " Bonus:" + artifact.buff
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -195,33 +195,33 @@ public class Show {
     static String getHeroStatOutput(Hero hero) {
         String output =
             "\n" +
-            "Hero Name:\t" + hero.name + "\n" +
-            "Hero Class:\t" + hero.fighterType + "\n" +
-            "Max Hit Points:\t" + hero.maxHitPoints + "\n" +
-            "Defence:\t" + hero.defence + "\n" +
-            "Attack:\t\t" + hero.attack + "\n" +
-            "Level:\t\t" + hero.level + "\n" +
-            "Exp:\t\t" + hero.exp
+            "Hero Name:     "+ hero.name + "\n" +
+            "Hero Class:    " + hero.fighterType + "\n" +
+            "Max Hit Points:" + hero.maxHitPoints + "\n" +
+            "Defence:       " + hero.defence + "\n" +
+            "Attack:        " + hero.attack + "\n" +
+            "Level:         " + hero.level + "\n" +
+            "Exp:           " + hero.exp
         ;
         if (hero.helm != null) {
             output = output +
                 "\n" +
-                "Artifact:\t" + hero.helm.artifactType + "\n" +
-                "Helm Hit Points Buff: " + hero.helm.buff
+                "Artifact:      " + hero.helm.artifactType + "\n" +
+                "Helm Hit Points Buff:" + hero.helm.buff
             ;    
         }    
         if (hero.armour != null) {
             output = output + 
                 "\n" +
-                "Artifact:\t" + hero.armour.artifactType + "\n" +
-                "Armour Defence Buff: " + hero.armour.buff
+                "Artifact:      " + hero.armour.artifactType + "\n" +
+                "Armour Defence Buff:" + hero.armour.buff
             ;    
         }    
         if (hero.weapon != null) {
             output = output + 
                 "\n" +
-                "Artifact:\t" + hero.weapon.artifactType + "\n" +
-                "Weapon Attack Buff: " + hero.weapon.buff
+                "Artifact:      " + hero.weapon.artifactType + "\n" +
+                "Weapon Attack Buff:" + hero.weapon.buff
             ;    
         }    
         return output;
