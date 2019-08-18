@@ -8,6 +8,7 @@ import java.io.IOException;
 import swingy.models.Artifact;
 import swingy.models.FighterTypes;
 import swingy.models.Hero;
+import swingy.models.HeroAura;
 import swingy.models.Map;
 import swingy.models.Villian;
 import swingy.views.*;
@@ -31,7 +32,14 @@ public class Swingy {
 
     static void exit(String input) {
         if (input.equals("EXIT")) {
-            System.exit(1);
+            String string = HeroAura.hero.name + " " + HeroAura.hero.fighterType + " " + HeroAura.hero.level + " " + HeroAura.hero.exp;
+            DoTheWriting.writeTheThing(string);
+            try {
+                DoTheWriting.fileWriter.close();
+                System.exit(1);
+            } catch (IOException e) {
+                System.out.println("Cannot access output file");
+            }
         }
     }
     
@@ -85,6 +93,7 @@ public class Swingy {
         setDisplayType(args);
         // Gui.useGui = true;
         Hero hero = setup();
+        HeroAura.hero = hero;
         Show.displayNewHeroStats(hero);
         // if (!Gui.useGui) {
         //     Show.pressReturn();
