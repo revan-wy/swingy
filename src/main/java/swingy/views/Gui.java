@@ -2,11 +2,14 @@ package swingy.views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class Gui {
     public static boolean useGui = false;
     static JFrame frame;
     static JLabel outputArea;
+    public static JTextField tf;
+    public static boolean returnPress = false;
     
     public static void showtime() {
 
@@ -16,9 +19,19 @@ public class Gui {
         frame.setSize(450, 450);
 
         //Creating the panel at bottom and adding components
+        Action action = new AbstractAction() {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                returnPress = true;
+            }
+        };
+
         JPanel panel = new JPanel(); // the panel is not visible in output
         JLabel label = new JLabel("Type here");
-        JTextField tf = new JTextField(30); // accepts upto 10 characters
+        tf = new JTextField(30); // accepts upto 10 characters
+        tf.addActionListener(action);
         panel.add(label); // Components Added using Flow Layout
         panel.add(tf);
 

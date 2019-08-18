@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import swingy.views.Gui;
 import swingy.views.Show;
 
 public class GetInput {
@@ -15,18 +16,26 @@ public class GetInput {
 
 
     public static String read() {
-        String input;
-        if (br == null) {
-            makeBr();
-        }
-        try {
-            input = br.readLine();
+        String input = "";
+        if (!Gui.useGui) {
+            if (br == null) {
+                makeBr();
+            }
+            try {
+                input = br.readLine();
+                return input.toUpperCase();
+            } catch (IOException e) {
+                Show.readIOException();
+                System.exit(1);
+                return "";
+            }
+        } else {
+            while (!Gui.returnPress) {
+                input = Gui.tf.getText();
+            } 
+            Gui.returnPress = false;
+            Gui.tf.setText("");
             return input.toUpperCase();
-        } catch (IOException e) {
-            Show.readIOException();
-            System.exit(1);
-            return "";
         }
-
     }
 }
