@@ -27,8 +27,7 @@ public class Show {
     public static void artifactDropped() {
         String output = 
             "\n" + 
-            "An artifact has been dropped." + "\n" +
-            "Press RETURN" + "\n"
+            "An artifact has been dropped."
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -68,7 +67,7 @@ public class Show {
             "           Rogue   Thief   Soldier" + "\n" +
             "Hit Points   80      80      160"   + "\n" +
             "Defence      80     160       80"   + "\n" +
-            "Attack      160      80       80"   + "\n"
+            "Attack      160      80       80"
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -107,10 +106,11 @@ public class Show {
         }
         output = 
             "\n" + 
-            "Artifact Type: \t" + artifact.artifactType + "\n"
+            "Artifact Type: \t" + artifact.artifactType
         ;
         output = output + 
-            affectedStat + " Bonus: \t" + artifact.buff + "\n"
+            "\n" +
+            affectedStat + " Bonus: \t" + artifact.buff
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -129,24 +129,27 @@ public class Show {
             "Defence:\t" + hero.defence + "\n" +
             "Attack:\t\t" + hero.attack + "\n" +
             "Level:\t\t" + hero.level + "\n" +
-            "Exp:\t\t" + hero.exp + "\n"
+            "Exp:\t\t" + hero.exp
         ;
         if (hero.helm != null) {
             output = output +
+                "\n" +
                 "Artifact:\t" + hero.helm.artifactType + "\n" +
-                "Helm Hit Points Buff: " + hero.helm.buff + "\n"
+                "Helm Hit Points Buff: " + hero.helm.buff
             ;    
         }    
         if (hero.armour != null) {
             output = output + 
+                "\n" +
                 "Artifact:\t" + hero.armour.artifactType + "\n" +
-                "Armour Defence Buff: " + hero.armour.buff + "\n"
+                "Armour Defence Buff: " + hero.armour.buff
             ;    
         }    
         if (hero.weapon != null) {
             output = output + 
+                "\n" +
                 "Artifact:\t" + hero.weapon.artifactType + "\n" +
-                "Weapon Attack Buff: " + hero.weapon.buff + "\n"
+                "Weapon Attack Buff: " + hero.weapon.buff
             ;    
         }    
         if (!Gui.useGui) {
@@ -198,7 +201,7 @@ public class Show {
     public static void gainedExp(double exp, Hero hero) {
         String output = 
             "\n" + 
-            hero.name + " has gained " + (int)exp + " experience points." + "\n"
+            hero.name + " has gained " + (int)exp + " experience points."
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -255,7 +258,7 @@ public class Show {
     public static void leveledUp(Hero hero) {
         String output = 
             "\n" + 
-            hero.name + " has gained a level." + "\n"
+            hero.name + " has gained a level."
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -282,7 +285,7 @@ public class Show {
         String output = 
             "\n" + 
             "Map size: " + Map.size + "\n" +
-            "Hero position: " + x + "," + y + "\n"
+            "Hero position: " + x + "," + y
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -321,11 +324,10 @@ public class Show {
     public static void runFail() {
         String output = 
             "\n" + 
-            "Your escape attempt failed. Now, FIGHT!" + "\n"
+            "Your escape attempt failed. Now, FIGHT!"
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
@@ -334,11 +336,10 @@ public class Show {
     public static void runSuccess(Villian villian) {
         String output = 
             "\n" + 
-            "You've managed to escape from the " + villian.fighterType + ".\n"
+            "You've managed to escape from the " + villian.fighterType
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.outputString = Gui.outputString + output;
             // Gui.print(output);
@@ -348,7 +349,7 @@ public class Show {
     public static void villianAppeared(Villian villian) {
         String output = 
             "\n" + 
-            "A wild " + villian.fighterType + " appeared!" + "\n"
+            "A wild " + villian.fighterType + " appeared!"
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -361,7 +362,7 @@ public class Show {
     public static void villianDefeated(Villian villian) {
         String output = 
             "\n" + 
-            "You've defeated the " + villian.fighterType + ".\n"
+            "You've defeated the " + villian.fighterType
         ;
         if (!Gui.useGui) {
             System.out.print(output);
@@ -374,7 +375,7 @@ public class Show {
     public static void won() {
         String output = 
             "\n" + 
-            "You've won" + "\n"
+            "You've won"
         ;
         if (!Gui.useGui) {
             System.out.print(output);

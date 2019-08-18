@@ -31,7 +31,6 @@ public class Hero extends Fighter {
         double actualExp = (double)rawExp * ((double)villian.statSum() / (double)this.statSum()) * 3;
         this.exp = this.exp + (int)actualExp;
         Show.gainedExp(actualExp, this);
-        GetInput.read();
         levelUp();
     }
 
@@ -55,7 +54,6 @@ public class Hero extends Fighter {
             this.level += 1;
             this.exp -= requiredExp;
             Show.leveledUp(this);
-            GetInput.read();
         }
     }
     
@@ -72,11 +70,10 @@ public class Hero extends Fighter {
             boolean result = random.nextBoolean();
             if (result) {
                 Show.runSuccess(villian);
-                GetInput.read();
             } else {
                 Show.runFail();
-                GetInput.read();
             }
+            GetInput.read();
             return result;
         }
     }
