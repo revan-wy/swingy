@@ -1,1 +1,1 @@
-renzo thief 50 50
+renzo thief 0 0

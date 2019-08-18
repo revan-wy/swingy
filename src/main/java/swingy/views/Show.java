@@ -13,27 +13,29 @@ public class Show {
     public static void arrayIndexOutOfBoundsException() {
         String output = 
             "\n" + 
-            "Specify save file" + "\n"
+            "Specify save file" + "\n" +
+            "Press RETURN" + "\n"
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void artifactDropped() {
         String output = 
             "\n" + 
-            "An artifact has been dropped." + "\n"
+            "An artifact has been dropped." + "\n" +
+            "Press RETURN" + "\n"
         ;
         if (!Gui.useGui) {
             System.out.print(output);
-            GetInput.read();
         } else {
             Gui.print(output);
         }
+        GetInput.read();
     }
     
     public static void askHeroClass() {
@@ -72,7 +74,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
         }
     }
 
@@ -84,7 +86,8 @@ public class Show {
         if (!Gui.useGui) {
             System.out.print(output);
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
+            Gui.print();
         }
     }
     
@@ -174,7 +177,8 @@ public class Show {
         if (!Gui.useGui) {
             System.out.print(output);
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
+            Gui.print();
         }
     }
     
@@ -187,7 +191,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
         }
     }
     
@@ -198,6 +202,7 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
+            GetInput.read();
         } else {
             Gui.print(output);
         }
@@ -243,7 +248,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
         }
 }
 
@@ -254,6 +259,7 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
+            GetInput.read();
         } else {
             Gui.print(output);
         }
@@ -282,7 +288,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
         }
     }
 
@@ -319,6 +325,7 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
+            GetInput.read();
         } else {
             Gui.print(output);
         }
@@ -331,8 +338,10 @@ public class Show {
         ;
         if (!Gui.useGui) {
             System.out.print(output);
+            GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
+            // Gui.print(output);
         }
     }
     
@@ -345,7 +354,7 @@ public class Show {
             System.out.print(output);
             GetInput.read();
         } else {
-            Gui.print(output);
+            Gui.outputString = Gui.outputString + output;
         }
     }
 

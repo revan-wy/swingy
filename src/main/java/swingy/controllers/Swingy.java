@@ -26,8 +26,6 @@ public class Swingy {
             heroClass = GetInput.read();
         }
 
-        // public String name;
-        // public FighterClass fighterClass;
         return new Hero(name, heroClass, 0);
     }
 
@@ -81,12 +79,14 @@ public class Swingy {
         setDisplayType(args);
         Hero hero = setup();
         Show.displayStats(hero);
-        Show.pressReturn();
+        // if (!Gui.useGui) {
+        //     Show.pressReturn();
+        // }
         Map.createMap(hero);
-        Show.mapSizeAndPos();
         while (true) {
+            // Show.heroPos();
+            Show.mapSizeAndPos();
             Map.moveHero();
-            Show.heroPos();
             if (Map.encounterVillian()) {
                 if (fight(hero)) {
                     Artifact artifact = new Artifact(hero);

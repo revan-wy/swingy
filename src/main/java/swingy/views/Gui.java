@@ -10,7 +10,7 @@ public class Gui {
     static JLabel outputArea;
     public static JTextField tf;
     public static boolean returnPress = false;
-    static String outputString;
+    static String outputString = "";
     
     static void print() {
         Gui.outputArea.setText(Gui.stringToHtml(outputString));
