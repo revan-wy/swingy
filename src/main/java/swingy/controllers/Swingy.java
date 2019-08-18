@@ -78,7 +78,7 @@ public class Swingy {
     }
 
     public static void main (String[] args) {
-        // Gui.showtime();
+        setDisplayType(args);
         Hero hero = setup();
         Show.displayStats(hero);
         Show.pressReturn();
@@ -98,10 +98,16 @@ public class Swingy {
         }
     }
 
+    static void setDisplayType(String[] args) {
+        String input = args[0].toUpperCase();
+        if (input.equals("GUI")) {
+            Gui.useGui = true;
+            Gui.showtime();
+        }
+    }
+    
     public static Hero setup () {
         String input = "";
-        // String create = "create";
-        // String load = "load";
         
         while (!(input.equals("CREATE") || input.equals("LOAD"))) {
             Show.initialScreen();

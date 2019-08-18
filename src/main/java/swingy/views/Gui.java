@@ -5,11 +5,12 @@ import java.awt.*;
 
 public class Gui {
     public static boolean useGui = false;
+    static JFrame frame;
     
     public static void showtime() {
 
         //Creating the Frame
-        JFrame frame = new JFrame("Revan-wy's Swingy");
+        frame = new JFrame("Revan-wy's Swingy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 800);
 
