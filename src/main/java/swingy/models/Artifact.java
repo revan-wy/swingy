@@ -5,6 +5,7 @@ import java.util.Random;
 import swingy.views.Show;
 
 public class Artifact {
+
     public ArtifactTypes artifactType;
     public int buff;
 

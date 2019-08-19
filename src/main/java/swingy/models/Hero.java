@@ -2,11 +2,16 @@ package swingy.models;
 
 import java.util.Random;
 
+import javax.validation.constraints.Size;
+
 import swingy.controllers.GetInput;
 import swingy.views.Show;
 
 public class Hero extends Fighter {
+    
+    @Size(max = 30)
     public String name;
+    
     public int exp;
     public Artifact helm;
     public Artifact armour;

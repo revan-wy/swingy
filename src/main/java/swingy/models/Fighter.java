@@ -1,7 +1,12 @@
 package swingy.models;
 
+import javax.validation.constraints.NotNull;
+
 public class Fighter {
+    
+    @NotNull
     public FighterTypes fighterType;
+    
     public int level;
     public int attack;
     public int defence;
