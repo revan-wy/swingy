@@ -142,7 +142,7 @@ public class Swingy {
 
     public static void victory() {
         Show.won();
-        System.exit(1);
+        exit("EXIT");
     }
 
 }
