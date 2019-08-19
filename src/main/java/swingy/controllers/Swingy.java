@@ -20,6 +20,11 @@ public class Swingy {
         
         Show.askHeroName();
         name = GetInput.read();
+        while (name.equals("") || name.length() > 30) {
+            Show.lessThanThirty();
+            Show.askHeroName();
+            name = GetInput.read();
+        }
 
         while (!(FighterTypes.contains(heroClass))) {
             Show.classLevelZeroDetails();
@@ -76,13 +81,36 @@ public class Swingy {
     }
 
     private static Hero loadExistingHero() {
+        String name, heroType = "";
+        int level, experience, helm = 0, armour = 0, weapon = 0;
+        int i = 4;
         try {
             BufferedReader reader = new BufferedReader(new FileReader("save.txt"));
             String line = reader.readLine();
             if (line != null) {
                 reader.close();
-                return new Hero(line.split(" ")[0].toUpperCase(), line.split(" ")[1].toUpperCase(),
-                Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]));
+                name = line.split(" ")[0].toUpperCase();
+                heroType = line.split(" ")[1].toUpperCase();
+                level = Integer.parseInt(line.split(" ")[2]);
+                experience = Integer.parseInt(line.split(" ")[3]);
+                while (true) {
+                    if (i + 1 > line.split(" ").length) {
+                        break;
+                    }
+                    switch(line.split(" ")[i].toUpperCase()) {
+                        case "HELM":
+                            helm = Integer.parseInt(line.split(" ")[i + 1]);
+                            break;
+                        case "ARMOUR":
+                            armour = Integer.parseInt(line.split(" ")[i + 1]);
+                            break;
+                        case "WEAPON":
+                            weapon = Integer.parseInt(line.split(" ")[i + 1]);
+                            break;
+                    }
+                    i += 2;
+                }
+                return new Hero(name, heroType, level, experience, helm, armour, weapon);
             }
             reader.close();
             return createNewHero();

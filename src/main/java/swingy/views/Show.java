@@ -284,6 +284,18 @@ public class Show {
         GetInput.read();
     }
     
+    public static void lessThanThirty() {
+        String output = 
+            "\n" +
+            "Character name must be between 1 and 30 characters long.";
+            if (!Gui.useGui) {
+                System.out.print(output);
+            } else {
+                Gui.print(output);
+            }
+            GetInput.read();
+        }
+    
     public static void lost() {
         String output = 
             "\n" + 

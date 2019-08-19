@@ -20,6 +20,21 @@ public class Artifact {
         }
     }
 
+    public Artifact(String type, int buff) {
+        switch(type) {
+            case "HELM":
+                this.artifactType = ArtifactTypes.HELM;
+                break;
+            case "ARMOUR":
+                this.artifactType = ArtifactTypes.ARMOUR;
+                break;
+            case "WEAPON":
+                this.artifactType = ArtifactTypes.WEAPON;
+                break;
+        }
+        this.buff = buff;
+    }
+
     int findArtifactBuff(Hero hero) {
         Random random = new Random();
         double buff = random.nextDouble() / 10;

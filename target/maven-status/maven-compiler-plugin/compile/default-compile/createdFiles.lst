@@ -9,8 +9,8 @@ swingy/models/Villian.class
 swingy/controllers/DoTheWriting.class
 swingy/views/Show$1.class
 swingy/models/FighterTypes.class
-swingy/models/Hero.class
 swingy/models/ArtifactTypes.class
+swingy/models/Hero.class
 swingy/models/Coordinates.class
 swingy/models/Fighter$1.class
 swingy/models/Hero$1.class

@@ -9,7 +9,7 @@ import swingy.views.Show;
 
 public class Hero extends Fighter {
     
-    @Size(max = 30)
+    @Size(min = 1, max = 30)
     public String name;
     
     public int exp;
@@ -51,6 +51,21 @@ public class Hero extends Fighter {
         super(heroType, level);
         this.name = name;
         this.exp = exp;
+    }
+
+    public Hero(String name, String heroType, int level, int exp, int helm, int armour, int weapon) {
+        super(heroType, level);
+        this.name = name;
+        this.exp = exp;
+        if (helm > 0) {
+            this.helm = new Artifact("HELM", helm);
+        }
+        if (armour > 0) {
+            this.armour = new Artifact("ARMOUR", armour);
+        }
+        if (weapon > 0) {
+            this.weapon = new Artifact("WEAPON", weapon);
+        }
     }
 
     public void levelUp() {
