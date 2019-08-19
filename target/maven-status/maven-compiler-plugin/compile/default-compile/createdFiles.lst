@@ -1,12 +1,12 @@
-swingy/controllers/GetInput.class
 swingy/models/Artifact.class
+swingy/controllers/GetInput.class
 swingy/models/Fighter.class
-swingy/controllers/Swingy.class
 swingy/views/Gui.class
+swingy/controllers/Swingy.class
 swingy/views/Gui$1.class
-swingy/controllers/DoTheWriting.class
-swingy/models/Villian.class
 swingy/models/Artifact$1.class
+swingy/models/Villian.class
+swingy/controllers/DoTheWriting.class
 swingy/views/Show$1.class
 swingy/models/FighterTypes.class
 swingy/models/ArtifactTypes.class

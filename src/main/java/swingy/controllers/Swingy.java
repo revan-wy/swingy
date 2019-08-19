@@ -32,14 +32,16 @@ public class Swingy {
 
     static void exit(String input) {
         if (input.equals("EXIT")) {
-            String string = HeroAura.hero.name + " " + HeroAura.hero.fighterType + " " + HeroAura.hero.level + " " + HeroAura.hero.exp;
-            DoTheWriting.writeTheThing(string);
-            try {
-                DoTheWriting.fileWriter.close();
-                System.exit(1);
-            } catch (IOException e) {
-                System.out.println("Cannot access output file");
+            if (HeroAura.hero != null) {
+                String string = HeroAura.hero.name + " " + HeroAura.hero.fighterType + " " + HeroAura.hero.level + " " + HeroAura.hero.exp;
+                DoTheWriting.writeTheThing(string);
+                try {
+                    DoTheWriting.fileWriter.close();
+                } catch (IOException e) {
+                    System.out.println("Cannot access output file");
+                }
             }
+            System.exit(1);
         }
     }
     
