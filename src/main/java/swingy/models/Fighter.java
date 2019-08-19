@@ -79,9 +79,4 @@ public class Fighter {
         return FighterTypes.ROGUE;
     }
 
-    // private int setAttack() {
-    //     switch(this.fighterClass) {
-
-    //     }
-    // }
 }

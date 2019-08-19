@@ -23,12 +23,10 @@ public class Gui {
     
     public static void showtime() {
 
-        //Creating the Frame
         frame = new JFrame("Revan-wy's Swingy");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450, 450);
 
-        //Creating the panel at bottom and adding components
         Action action = new AbstractAction() {
             private static final long serialVersionUID = 1L;
 
@@ -38,17 +36,15 @@ public class Gui {
             }
         };
 
-        JPanel panel = new JPanel(); // the panel is not visible in output
+        JPanel panel = new JPanel();
         JLabel label = new JLabel("Type here");
-        tf = new JTextField(30); // accepts upto 10 characters
+        tf = new JTextField(30);
         tf.addActionListener(action);
-        panel.add(label); // Components Added using Flow Layout
+        panel.add(label);
         panel.add(tf);
 
-        // Text Area at the Center
         outputArea = new JLabel();
 
-        //Adding Components to the frame.
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.CENTER, outputArea);
         frame.setVisible(true);

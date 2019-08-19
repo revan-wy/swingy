@@ -49,7 +49,6 @@ public class Swingy {
     }
     
     static boolean fight(Hero hero) {
-        // Villian.getRandomVillian(hero);
         Villian villian = Villian.getRandomVillian(hero);
         Show.villianAppeared(villian);
         if (hero.run(villian)) {
@@ -91,23 +90,18 @@ public class Swingy {
 
     public static void main (String[] args) {
         setDisplayType(args);
-        // Gui.useGui = true;
         Hero hero = setup();
         HeroAura.hero = hero;
         Show.displayNewHeroStats(hero);
-        // if (!Gui.useGui) {
-        //     Show.pressReturn();
-        // }
         Map.createMap(hero);
         while (true) {
-            // Show.heroPos();
             Show.mapSizeAndPos();
-            Map.moveHero(); //try
+            Map.moveHero();
             if (Map.encounterVillian()) {
                 if (fight(hero)) {
                     Artifact artifact = new Artifact(hero);
-                    if (artifact.buff != 0 && hero.takeArtifact(artifact)) { // try
-                        hero.equipArtifact(artifact); // try
+                    if (artifact.buff != 0 && hero.takeArtifact(artifact)) {
+                        hero.equipArtifact(artifact);
                     }
                 }
             }

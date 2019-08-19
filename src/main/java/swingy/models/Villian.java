@@ -13,7 +13,6 @@ public class Villian extends Fighter {
         } else {
             return new Villian("SKELETON", hero);
         }
-        // return villian;
     }
 
     public int statSum() {

@@ -359,7 +359,6 @@ public class Show {
             System.out.print(output);
         } else {
             Gui.print(output);
-            // Gui.print(output);
         }
         GetInput.read();
     }
