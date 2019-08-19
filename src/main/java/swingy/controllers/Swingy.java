@@ -34,6 +34,15 @@ public class Swingy {
         if (input.equals("EXIT")) {
             if (HeroAura.hero != null) {
                 String string = HeroAura.hero.name + " " + HeroAura.hero.fighterType + " " + HeroAura.hero.level + " " + HeroAura.hero.exp;
+                if (HeroAura.hero.helm != null) {
+                    string += " " + HeroAura.hero.helm.artifactType + " " + HeroAura.hero.helm.buff;
+                }
+                if (HeroAura.hero.armour != null) {
+                    string += " " + HeroAura.hero.armour.artifactType + " " + HeroAura.hero.armour.buff;
+                }
+                if (HeroAura.hero.weapon != null) {
+                    string += " " + HeroAura.hero.weapon.artifactType + " " + HeroAura.hero.weapon.buff;
+                }
                 DoTheWriting.writeTheThing(string);
                 try {
                     DoTheWriting.fileWriter.close();
