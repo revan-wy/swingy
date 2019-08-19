@@ -35,9 +35,9 @@ public class Fighter {
                 this.maxHitPoints = 80;
                 break;
             default:
-                this.attack = 80;
+                this.attack = 160;
                 this.defence = 160;
-                this.maxHitPoints = 80;
+                this.maxHitPoints = 160;
             break;
         }
         this.remainingHitPoints = this.maxHitPoints;

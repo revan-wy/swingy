@@ -19,11 +19,11 @@ public class Swingy {
         String heroClass = "";
         
         Show.askHeroName();
-        name = GetInput.read();
+        name = GetInput.read().trim();
         while (name.equals("") || name.length() > 30) {
             Show.lessThanThirty();
             Show.askHeroName();
-            name = GetInput.read();
+            name = GetInput.read().trim();
         }
 
         while (!(FighterTypes.contains(heroClass))) {
